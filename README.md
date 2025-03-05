@@ -30,7 +30,7 @@ A Spring Boot application for library management system.
 ### Clone the Repository
 
 ```bash
-git clone <repository-url>
+git clone git@github.com:Subhasree01/LMSOLTP.git
 cd app
 ```
 
