@@ -8,6 +8,7 @@ A Spring Boot application for library management system.
 - Book Management (Add, Update, Delete, Search)
 - Transaction Management (Borrow, Return)
 - Simple Logging and Monitoring with Spring Actuator
+- Sample testcases provided with Talent API collections. (Instead of swagger/open API)
 
 ## Tech Stack
 
