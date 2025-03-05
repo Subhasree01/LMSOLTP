@@ -23,6 +23,7 @@ A Spring Boot application for library management system.
 - Maven
 - Docker
 - PostgreSQL
+- Google Chrome (Add Talent API Tester extension)
 
 ## Getting Started
 
@@ -60,6 +61,12 @@ docker run -p 8081:8080 librarymanagementapplication
 ## API Endpoints and DBs
 
 Refer to the API documentation: [API Documentation](./LMS-API-Documentation.docx)
+
+## API Testing
+
+Refer Talent API collections for interactive testing [API Collections](./LibraryManagementCollections.json) 
+
+Import above Json collection from Talent API Tester.
 
 
 

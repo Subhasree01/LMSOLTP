@@ -1,0 +1,739 @@
+{
+  "version": 6,
+  "entities": [
+    {
+      "entity": {
+        "type": "Project",
+        "id": "46f61b1b-43b9-47c7-84a8-a6abfbdbb6b7",
+        "name": "LibraryManagementAPI"
+      },
+      "children": [
+        {
+          "entity": {
+            "type": "Service",
+            "id": "6f463706-c11d-44db-aae0-14a045e29ba3",
+            "name": "Books"
+          },
+          "children": [
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.5",
+                  "name": "DELETE"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text",
+                  "textBody": "{\n  \"title\": \"testbook\",\n  \"author\":\"subhasree\",\n  \"category\": \"general\",\n  \"availability\": \"Available\"\n}\n"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:8081",
+                  "path": "/books/12"
+                },
+                "id": "b75911fe-0f1f-41ac-a9ba-b5f850319388",
+                "name": "Delete - Local (delete books)",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "enabled": true,
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdWJoYXNyZWUiLCJpYXQiOjE3NDExOTUyMDQsImV4cCI6MTc0MTE5NzAwNH0.SZgo4j0RdFjLeYPpOzTkn3snUDZkb1fzUwpcKSZ5r1k"
+                  },
+                  {
+                    "name": "",
+                    "value": ""
+                  }
+                ]
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "requestBody": true,
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+                  "name": "POST"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text",
+                  "textBody": "{\n  \"bookid\": null,\n  \"title\": \"test\",\n  \"author\":\"test\",\n  \"category\": \"Scify\",\n  \"availability\": \"Available\"\n}\n"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:8081",
+                  "path": "/books/add"
+                },
+                "id": "3093e9a4-bf8c-4d01-b9f7-c7f722853995",
+                "name": "POST - Local (add books)",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "enabled": true,
+                    "name": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "enabled": true,
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdWJoYXNyZWUiLCJpYXQiOjE3NDExOTUyMDQsImV4cCI6MTc0MTE5NzAwNH0.SZgo4j0RdFjLeYPpOzTkn3snUDZkb1fzUwpcKSZ5r1k"
+                  }
+                ]
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "requestBody": true,
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.4",
+                  "name": "PUT"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text",
+                  "textBody": "{\n\"booksCount\": 4\n}"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:8081",
+                  "path": "/books/9"
+                },
+                "id": "14bb30be-cc6b-44d4-9b4f-e96f2a6b541a",
+                "name": "PUT - Local (update books count)",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "enabled": true,
+                    "name": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "enabled": true,
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdWJoYXNyZWUiLCJpYXQiOjE3NDExOTUyMDQsImV4cCI6MTc0MTE5NzAwNH0.SZgo4j0RdFjLeYPpOzTkn3snUDZkb1fzUwpcKSZ5r1k"
+                  }
+                ]
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "requestBody": true,
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.4",
+                  "name": "PUT"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text",
+                  "textBody": "{\n\"title\": \"hamlet\",\n\"author\": \"Shakespeare\",\n\"category\": \"Fiction\",\n\"availability\": \"Available\"\n}"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:8081",
+                  "path": "/books/6"
+                },
+                "id": "d38685f1-1819-4335-ab80-37d571a1dd9c",
+                "name": "PUT - Local (update books)",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "enabled": true,
+                    "name": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "enabled": true,
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdWJoYXNyZWUiLCJpYXQiOjE3NDExOTUyMDQsImV4cCI6MTc0MTE5NzAwNH0.SZgo4j0RdFjLeYPpOzTkn3snUDZkb1fzUwpcKSZ5r1k"
+                  }
+                ]
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                  "name": "GET"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text",
+                  "textBody": "{\n  \"bookId\": 1,\n  \"title\": \"testbook\",\n  \"author\":\"subha\",\n  \"category\": \"general\",\n  \"availability\": \"Available\"\n}\n"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": [
+                      {
+                        "enabled": true,
+                        "name": "title",
+                        "value": "hamlet"
+                      },
+                      {
+                        "enabled": true,
+                        "name": "availability",
+                        "value": "Available"
+                      },
+                      {
+                        "enabled": true,
+                        "name": "category",
+                        "value": "Fiction"
+                      },
+                      {
+                        "enabled": true,
+                        "name": "author",
+                        "value": "homer"
+                      }
+                    ]
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:8081",
+                  "path": "/books"
+                },
+                "id": "fde38a6a-4b5a-497f-a226-da1c5996603f",
+                "name": "SEARCH - Local (with query params)",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "enabled": true,
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdWJoYXNyZWUiLCJpYXQiOjE3NDExOTUyMDQsImV4cCI6MTc0MTE5NzAwNH0.SZgo4j0RdFjLeYPpOzTkn3snUDZkb1fzUwpcKSZ5r1k"
+                  },
+                  {
+                    "name": "",
+                    "value": ""
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "entity": {
+            "type": "Service",
+            "id": "68c0d02d-d9f7-4367-838e-a23a38e51a2b",
+            "name": "Borrow"
+          },
+          "children": [
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                  "name": "GET"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text",
+                  "textBody": "{\n  \"bookid\": 7,\n  \"userid\": 5\n}\n"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": [
+                      {
+                        "enabled": true,
+                        "name": "userid",
+                        "value": "5"
+                      },
+                      {
+                        "name": "bookid",
+                        "value": "6"
+                      }
+                    ]
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:8081",
+                  "path": "/getHistoryByUserOrBook"
+                },
+                "id": "cfde7097-4d09-40ab-8926-5b7b44734f5c",
+                "name": "GET - Local (get history for user & book)",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "enabled": true,
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdWJoYXNyZWUiLCJpYXQiOjE3NDEyMDU3ODAsImV4cCI6MTc0MTIwNzU4MH0.kYm7PRQFte1oGjOf63EZbgq3mmlEli9CBXWF8PP2wdQ"
+                  }
+                ]
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                  "name": "GET"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text",
+                  "textBody": "{\n  \"bookid\": 7,\n  \"userid\": 5\n}\n"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:8081",
+                  "path": "/history"
+                },
+                "id": "e3ab6777-4464-4b9d-b005-9be48e8f9a5e",
+                "name": "GET - Local (get history)",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "enabled": true,
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdWJoYXNyZWUiLCJpYXQiOjE3NDEyMTQ2MjMsImV4cCI6MTc0MTIxNjQyM30.R-5S7HkBK2yg5KNfFZJ2dJFtKoiXM8T6LDLhJxdd35c"
+                  }
+                ]
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "requestBody": true,
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+                  "name": "POST"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text",
+                  "textBody": "{\n    \"books\": {\n        \"bookid\": 9\n    },\n    \"userInfo\": {\n        \"id\": 7\n    }\n}"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:8081",
+                  "path": "/borrow"
+                },
+                "id": "79089dd0-52ec-493a-8746-fb9e435f0650",
+                "name": "POST - Local (borrow a book)",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "enabled": true,
+                    "name": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "enabled": true,
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdWJoYXNyZWUiLCJpYXQiOjE3NDExOTUyMDQsImV4cCI6MTc0MTE5NzAwNH0.SZgo4j0RdFjLeYPpOzTkn3snUDZkb1fzUwpcKSZ5r1k"
+                  }
+                ]
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "requestBody": true,
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+                  "name": "POST"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text",
+                  "textBody": "{\n    \"books\": {\n        \"bookid\": 9\n    },\n    \"userInfo\": {\n        \"id\": 7\n    }\n}"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:8081",
+                  "path": "/return"
+                },
+                "id": "0244a7da-c907-4a2a-99e7-33ddbedb973b",
+                "name": "POST - Local (return a book)",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "enabled": true,
+                    "name": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "enabled": true,
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdWJoYXNyZWUiLCJpYXQiOjE3NDExOTUyMDQsImV4cCI6MTc0MTE5NzAwNH0.SZgo4j0RdFjLeYPpOzTkn3snUDZkb1fzUwpcKSZ5r1k"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "entity": {
+            "type": "Scenario",
+            "id": "cdb61540-1303-4e6a-8c2e-b307a22f9511",
+            "name": "Users"
+          },
+          "children": [
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.5",
+                  "name": "DELETE"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text",
+                  "textBody": "{\n  \"title\": \"testbook\",\n  \"author\":\"subhasree\",\n  \"category\": \"general\",\n  \"availability\": \"Available\"\n}\n"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:8081",
+                  "path": "/users/8"
+                },
+                "id": "3d909785-9037-4c74-b45b-cd1e416dcb03",
+                "name": "Delete - Local (delete user)",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "enabled": true,
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdWJoYXNyZWUiLCJpYXQiOjE3NDExOTUyMDQsImV4cCI6MTc0MTE5NzAwNH0.SZgo4j0RdFjLeYPpOzTkn3snUDZkb1fzUwpcKSZ5r1k"
+                  },
+                  {
+                    "name": "",
+                    "value": ""
+                  }
+                ]
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "requestBody": true,
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+                  "name": "POST"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text",
+                  "textBody": "{\n  \"id\": null,\n  \"name\": \"test\",\n  \"email\": \"test@gmail.com\",\n  \"password\": \"test\",\n  \"roles\":\"MEMBER\"\n}\n"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:8081",
+                  "path": "/users/create"
+                },
+                "id": "f8fe6194-65ba-4b4c-9870-c86cbddf5ed9",
+                "name": "POST - Local (add users)",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "enabled": true,
+                    "name": "Accept",
+                    "value": "application/json"
+                  }
+                ]
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "requestBody": true,
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.4",
+                  "name": "PUT"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text",
+                  "textBody": "{\n  \"name\": \"test\",\n  \"roles\":\"ADMIN\"\n}\n"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:8081",
+                  "path": "/users/20"
+                },
+                "id": "d896fb31-239c-45dd-aaba-f50c2cb8b09f",
+                "name": "PUT - Local (update users ROLE)",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "enabled": true,
+                    "name": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "enabled": true,
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdWJoYXNyZWUiLCJpYXQiOjE3NDExOTg3NzEsImV4cCI6MTc0MTIwMDU3MX0.H-InCNKPmBqOMm4uQJ6QBn0ZO2gyFLR2y2Y8sV4FukQ"
+                  }
+                ]
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "requestBody": true,
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+                  "name": "POST"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text",
+                  "textBody": "{\n  \"username\": \"subhasree\",\n  \"password\":\"subha123\"\n}\n"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:8081",
+                  "path": "/users/authenticate"
+                },
+                "id": "fc40a2ea-f1df-4f30-b73e-6279c09f2f1a",
+                "name": "POST - Local (authenticate Admin token)",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "enabled": true,
+                    "name": "Accept",
+                    "value": "application/json"
+                  }
+                ]
+              }
+            },
+            {
+              "entity": {
+                "type": "Request",
+                "method": {
+                  "requestBody": true,
+                  "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+                  "name": "POST"
+                },
+                "body": {
+                  "formBody": {
+                    "overrideContentType": true,
+                    "encoding": "application/x-www-form-urlencoded",
+                    "items": []
+                  },
+                  "bodyType": "Text",
+                  "textBody": "{\n  \"username\": \"abisheik\",\n  \"password\":\"abisheik123\"\n}\n"
+                },
+                "uri": {
+                  "query": {
+                    "delimiter": "&",
+                    "items": []
+                  },
+                  "scheme": {
+                    "name": "http",
+                    "version": "V11"
+                  },
+                  "host": "localhost:8081",
+                  "path": "/users/authenticate"
+                },
+                "id": "b674c9d2-7c9b-4b8b-86b4-82cbe4aeb5aa",
+                "name": "POST - Local (authenticate member token)",
+                "headers": [
+                  {
+                    "enabled": true,
+                    "name": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "enabled": true,
+                    "name": "Accept",
+                    "value": "application/json"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
