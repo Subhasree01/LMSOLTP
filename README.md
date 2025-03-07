@@ -7,7 +7,7 @@ A Spring Boot application for library management system.
 - User Authentication with JWT & User management (Create, Delete)
 - Book Management (Add, Update, Delete, Search)
 - Transaction Management (Borrow, Return)
-- Simple Logging and Monitoring with Spring Actuator
+- Opentelemetry integration & Jeager for generating/collecting logs, traces.
 - Sample testcases provided with Talent API collections. (Instead of swagger/open API)
 
 ## Tech Stack
@@ -17,6 +17,8 @@ A Spring Boot application for library management system.
 - PostgreSQL
 - JWT Authentication
 - Docker
+- Opentelemetry
+- Jeager
 
 ## Prerequisites
 
@@ -52,22 +54,34 @@ Use `application.properties`
 #### Using Docker
 
 ```bash
-# Build Docker image
-docker build -f Dockerfile -t librarymanagementapplication .
-
-# Run the container
-docker run -p 8081:8080 librarymanagementapplication
+# Build Docker image & Run
+docker compose up --build
 ```
 
 ## API Endpoints and DBs
 
-Refer to the API documentation: [API Documentation](./LMS-API-Documentation.docx)
+    1. Connect the Postgres in any DB tool such as Dbeaver or PGAdmin using below credentials.
+
+      - POSTGRES_DB=LMSDatabase
+      - POSTGRES_USER=LMSDatabase
+      - POSTGRES_PASSWORD=LMSDatabase
+      - port: 5432
+
+    2. Run the DB scripts before start testing API (find the scripts in the below API documentation)
+
+    Refer to the API documentation: [API Documentation](./LMS-API-Documentation.docx)
 
 ## API Testing
 
 Refer Talent API collections for interactive testing [API Collections](./LibraryManagementCollections.json) 
 
 Import above Json collection from Talent API Tester.
+
+## View Traces
+
+Hit the API request from Talent API tester and verify the traces collected by Jeager.
+
+http://localhost:16686/search
 
 
 
