@@ -1,0 +1,72 @@
+version: "3"
+
+services:
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: librarymanagementapplication
+    environment:
+      OTEL_SERVICE_NAME: "library-management"
+      OTEL_RESOURCE_ATTRIBUTES: "service=library-management,env=dev"
+      JAVA_TOOL_OPTIONS: "-javaagent:/opentelemetry-javaagent.jar"
+      OTEL_TRACES_EXPORTER: "otlp,logging"
+      OTEL_EXPORTER_OTLP_ENDPOINT: "http://jaeger:4318"
+      OTEL_EXPORTER_OTLP_PROTOCOL: "http/protobuf"
+      OTEL_LOGS_EXPORTER: "logging"
+      OTEL_METRICS_EXPORTER: "otlp"
+      SPRING_DATASOURCE_URL: "jdbc:postgresql://LMSDatabase:5432/LMSDatabase"
+      SPRING_DATASOURCE_USERNAME: "LMSDatabase"
+      SPRING_DATASOURCE_PASSWORD: "LMSDatabase"
+      SPRING_JPA_HIBERNATE_DDL_AUTO: "update"
+      SPRING_JPA_SHOW_SQL: "true"
+      SPRING_JPA_HIGHLIGHT_SQL: "true"
+      SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT: "org.hibernate.dialect.PostgreSQLDialect"
+      SPRING_JPA_PROPERTIES_HIBERNATE_SHOW_SQL: "true"
+      SPRING_JPA_PROPERTIES_HIBERNATE_HIGHLIGHT_SQL: "true"
+      SPRING_DATASOURCE_HIKARI_CONNECTION_TIMEOUT: "60000"
+      SPRING_DATASOURCE_HIKARI_MAXIMUM_POOL_SIZE: "5"
+      SPRING_DATASOURCE_DRIVER_CLASS_NAME: "org.postgresql.Driver"
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy 
+      jaeger-all-in-one:
+        condition: service_started
+    networks:
+      - library-management-network
+
+  jaeger-all-in-one:
+    container_name: jaeger
+    image: jaegertracing/all-in-one:latest
+    environment: 
+      - COLLECTOR_OTLP_ENABLED=true 
+    restart: always
+    ports:
+      - "16686:16686"
+      - "4317:4317"
+      - "4318:4318"
+    networks:
+      - library-management-network
+
+  postgres:
+    container_name: LMSDatabase
+    image: postgres:latest
+    environment:
+      - POSTGRES_DB=LMSDatabase
+      - POSTGRES_USER=LMSDatabase
+      - POSTGRES_PASSWORD=LMSDatabase
+    ports:
+      - "5433:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U LMSDatabase -d LMSDatabase"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - library-management-network
+
+networks:
+  library-management-network:
+    driver: bridge
