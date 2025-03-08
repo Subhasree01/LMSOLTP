@@ -60,16 +60,16 @@ docker compose up --build
 
 ## API Endpoints and DBs
 
-    1. Connect the Postgres in any DB tool such as Dbeaver or PGAdmin using below credentials.
+1. Connect the Postgres in any DB tool such as Dbeaver or PGAdmin using below credentials.
 
       - POSTGRES_DB=LMSDatabase
       - POSTGRES_USER=LMSDatabase
       - POSTGRES_PASSWORD=LMSDatabase
       - port: 5432
 
-    2. Run the DB scripts before start testing API (find the scripts in the below API documentation)
+2. Run the DB scripts before start testing API (find the scripts in the below API documentation)
 
-    Refer to the API documentation: [API Documentation](./LMS-API-Documentation.docx)
+Refer to the API documentation: [API Documentation](./LMS-API-Documentation.docx)
 
 ## API Testing
 
