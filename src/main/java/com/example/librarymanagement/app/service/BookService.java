@@ -13,7 +13,6 @@ import com.example.librarymanagement.app.exception.errorResponse;
 import com.example.librarymanagement.app.repository.BookRepository;
 
 import org.springframework.cache.annotation.CacheEvict;
-import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 
 
@@ -24,19 +23,19 @@ public class BookService {
     BookRepository bookRepository;
 
 
-    //@CachePut(value = "books", key = "#book.bookid")
+    @CacheEvict(value = "books", allEntries = true)
     public Books addBook(Books book) {
          return bookRepository.save(book);
     }
 
-    //@CacheEvict(value = "books", key = "#bookid")
+    @CacheEvict(value = "books", key = "#bookid")
     public void deleteBook(Long bookid) {
         Books book = bookRepository.findById(bookid)
         .orElseThrow(() -> new errorResponse("No Books found with this id: " + bookid));
         bookRepository.delete(book);
     }
 
-    //@Cacheable(value = "books", key = "#queryParams.toString()")
+    @Cacheable(value = "books", key = "#queryParams.toString()")
     public List<Books> getBooksBasedOnQueryParams(Map<String, String> queryParams) {
         System.out.println("Fetching Books from DB");
         Iterable<Books> allBooks = bookRepository.findAll();

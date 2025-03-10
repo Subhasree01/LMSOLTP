@@ -9,6 +9,7 @@ A Spring Boot application for library management system.
 - Transaction Management (Borrow, Return)
 - Opentelemetry integration & Jeager for generating/collecting logs, traces.
 - Sample testcases provided with Talent API collections. (Instead of swagger/open API)
+- Redis caching for frequently accessed book details
 
 ## Tech Stack
 
@@ -19,6 +20,7 @@ A Spring Boot application for library management system.
 - Docker
 - Opentelemetry
 - Jeager
+- Redis
 
 ## Prerequisites
 
@@ -27,6 +29,7 @@ A Spring Boot application for library management system.
 - Docker
 - PostgreSQL
 - Google Chrome (Add Talent API Tester extension)
+- Install Redis
 
 ## Getting Started
 

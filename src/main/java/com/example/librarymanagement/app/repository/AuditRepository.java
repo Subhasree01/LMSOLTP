@@ -3,12 +3,14 @@ package com.example.librarymanagement.app.repository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
 import com.example.librarymanagement.app.entity.History;
 
 import java.util.List;
 import java.util.Optional;
 
+@Repository
 public interface AuditRepository extends CrudRepository<History, Long> {
 
     @Query(value = "SELECT * FROM librarymanagementschema.history h where h.userid=:userid and h.bookid=:bookid order by auditid desc limit 1", nativeQuery = true)
